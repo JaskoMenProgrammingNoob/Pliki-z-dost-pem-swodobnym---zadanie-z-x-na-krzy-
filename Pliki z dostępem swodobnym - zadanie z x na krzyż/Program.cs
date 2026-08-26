@@ -31,18 +31,23 @@ class X
                     F.Seek(0, SeekOrigin.Begin);
         for(int i = 0; i < 9; i++)
         {
-            for (int j = 0; j < 9; j++) // dodalem nowa petle 
-            {
+            
                 Console.Write((char)F.ReadByte());
                 
-            }
+            
         }
         Console.WriteLine();
-        F.Seek(80, SeekOrigin.Begin);
-        
+        F.Seek(44, SeekOrigin.Begin);
         Console.Write((char)F.ReadByte());
-                    
-        
+        Console.WriteLine();
+        F.Seek(80, SeekOrigin.Begin);
+        for(int i = 0; i < 9; i++)
+        {
+            Console.Write((char)F.ReadByte());
+        }
+        Console.WriteLine();
+
+
         F.Close();
     }
 
