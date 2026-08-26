@@ -28,24 +28,28 @@ class X
         F = new FileStream("X.txt", FileMode.Open);
        
                 
-                    F.Seek(0, SeekOrigin.Begin);
-        for(int i = 0; i < 9; i++)
+                 
+        
+        Console.WriteLine();
+        
+       
+        F.Seek(0, SeekOrigin.Begin);
+        for (int i = 0; i < 9; i++)
         {
-            
-                Console.Write((char)F.ReadByte());
+            for (int j = 0; j < 9; j++)
+            {
+                char znak = (char)F.ReadByte();
+                if(i == 0 || i == 4 || i == 8)
+                {
+                    Console.Write(znak);
+                    
+                }
                 
-            
+            }
+            F.ReadByte();
+            Console.WriteLine();
         }
-        Console.WriteLine();
-        F.Seek(44, SeekOrigin.Begin);
-        Console.Write((char)F.ReadByte());
-        Console.WriteLine();
-        F.Seek(80, SeekOrigin.Begin);
-        for(int i = 0; i < 9; i++)
-        {
-            Console.Write((char)F.ReadByte());
-        }
-        Console.WriteLine();
+        
 
 
         F.Close();
